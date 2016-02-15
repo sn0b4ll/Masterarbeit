@@ -1,0 +1,71 @@
+\lstset{literate=%
+    {Ö}{{\"O}}1
+    {Ä}{{\"A}}1
+    {Ü}{{\"U}}1
+    {ß}{{\ss}}1
+    {ü}{{\"u}}1
+    {ä}{{\"a}}1
+    {ö}{{\"o}}1
+    {~}{{\textasciitilde}}1
+}
+
+\lstset{% general command to set parameter(s)
+	basicstyle=\small\ttfamily,%\small, % print whole listing small
+	keywordstyle=\color{THIblue}\bfseries,%\underbar,% underlined boldblack keywords
+	identifierstyle=, % nothing happens
+	commentstyle=\color{Aquamarine}, % white comments
+	stringstyle=\color{Cerulean}\ttfamily, % typewriter type for strings
+	showstringspaces=false, % no special string spaces
+	frame=single,
+	framexleftmargin=1.5em,
+	xleftmargin=2em,
+	numbers=left,
+	numberstyle=\color{gray},
+	numbersep=5pt,
+	captionpos=b,
+	breaklines=true}
+
+\lstdefinelanguage{conf}
+{
+  % list of keywords
+  basicstyle=\normalsize\ttfamily, %lineend
+  sensitive=false, % keywords are not case-sensitive
+  morecomment=[l]{\#}, % l is for line comment
+  morecomment=[s]{/*}{*/}, % s is for start and end delimiter
+  morestring=[b]" % defines that strings are enclosed in
+}
+
+\lstdefinelanguage{tikz}
+{
+  % list of keywords
+  morekeywords={
+	above,
+	align,
+  	begin,
+	below,
+  	caption,
+	draw,
+	end,
+	every,
+	fill,
+	label,
+  	line,
+	minumum,
+	node,
+	rectangle,
+	right,
+	scale,
+	size,
+  	style,
+	of,
+  	width,
+  	xshift,
+  	yshift
+  },
+  sensitive=false, % keywords are not case-sensitive
+  %alsodigit={0482},
+  keywordstyle=\color{THIblue}\bfseries,
+  morecomment=[l]{//}, % l is for line comment
+  morecomment=[s]{/*}{*/}, % s is for start and end delimiter
+  morestring=[b]" % defines that strings are enclosed in double quotes
+}

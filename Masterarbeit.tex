@@ -1,0 +1,128 @@
+%------------------------------------------------------------------
+%
+% Vorlage für Abschlussarbeiten an der Technischen Hochschule Ingolstadt
+% Bachelorarbeit/Masterarbeit
+%
+% Angepasst auf Seminararbeit
+%
+% V1 05.12.2011		Dr. Paul Spannaus
+% V2 07.07.2012		Dr. Paul Spannaus
+% V3 10.03.2013		Dr. Paul Spannaus
+% V4 28.01.2014		Dr. Paul Spannaus
+% V5 31.10.2014 	Dominik Schlecht
+% 	
+% -----------------------------------------------------------------
+% -----------------------------------------------------------------
+
+% Dokumentenklasse
+\documentclass[11pt,DIV=11,twoside, openright, BCOR=3mm]{scrreprt} % 
+
+\input{configs/packages}
+
+
+
+%%-------------Silbentrennung--------------------------------------
+\hyphenation{}
+
+%%-------------Index-----------------------------------------------
+\makeindex
+%\makenomenclature
+
+%------------------------------------------------------------------
+% Angabe der zu verwendenden Dateien, sodass nur z.B. das aktuelle 
+% Dokument compiliert wird; den Rest mit % auskommentieren
+\includeonly{%
+	chapter/title_page,%
+	chapter/thanks_statement,
+	chapter/vorwort,
+	chapter/appendix%
+}
+
+
+%------------------------------------------------------------------------
+
+%-----------------------------------------------------------------
+%---------------Dokumentenbeginn----------------------------------
+%-----------------------------------------------------------------
+	\begin{document}
+			
+			\include{chapter/title_page}			
+				\cleardoublepage
+
+			\include{chapter/thanks_statement}
+				\cleardoublepage	
+					
+			% Inhaltsverzeichnis
+			%\setcounter{\secnumdepth}{2} % Zwei Ebenen im Inhaltsverzeichnis auflisten
+			\setcounter{tocdepth}{4}
+			\tableofcontents
+				\cleardoublepage	
+		
+			% Abkrzungsverzeichnis
+			%\printnomenclature
+				%\cleardoublepage	
+			
+%------------------------------------------------------------------------
+			% Neunummerierung des Hauptteils
+			\pagenumbering{arabic}
+			\setcounter{page}{1}            
+            \cleardoublepage
+            
+            
+            %\include{chapter/einleitung}
+            \chapter{Einleitung}
+            \chapter{Arten von Penetrationstests}
+	            \section{Web-Application}
+	            \section{Wireless}
+	            \section{Social-Engineering}
+	            \section{Mobile-Applications}
+	            \section{Blackbox/Whitebox}
+            \chapter{Prozesse zu Penetrationstests}
+	            \section{Vorbereitung}
+		            \subsection{Aufwandsschätzung}
+		            \subsection{Rechtliche Aspekte}
+		            	\subsubsection{NDA}
+		            	\subsubsection{Haftungsausschluss}
+		            	\subsubsection{Absicherung gegen §203STGB}
+		            \subsection{Technische Aspekte}
+		            	\subsubsection{Infrastruktur}
+		    			\subsubsection{Tools}
+	            \section{Durchführung}
+	            	\subsection{Bewertung von Findings}
+	            		\subsubsection{CVSS}
+	            		\subsubsection{Alternative Modelle}
+					\subsection{Dokumentation}	            	
+	            	\subsection{Reporting}    	
+	            \section{Nachbereitung/Report}
+	            	\subsection{Inhalte}
+	            	\subsection{Vorlage}
+	     	\chapter{Penetrationstests mobiler Anwendungen}
+	     		\section{Aktuelle Situation und Vergleich}
+	     			\subsection{IOS}
+	     			\subsection{Windows-Phone}
+	     			\subsection{Android}
+	     		\section{Anforderungen}
+	     		\section{Laboraufbau}
+	     		\section{Entwicklung der Umgebung}
+	     			\subsection{Technisches Detail 1}
+	     			\subsection{Technisches Detail 2}
+	     		\section{Abgleich mit Anforderungen}
+	     	\chapter{Anwendung der Umgebung}
+	     		\section{Pentest Anwendung 1}
+	     		\section{Pentest Anwendung 2}
+	     	\chapter{Fazit}
+                \cleardoublepage	
+	
+%------------------------------------------------------------------------
+			
+			% Anhang
+			\include{chapter/appendix}
+			
+			% Literaturliste
+			\newpage
+			%\bibliographystyle{plaindin}	% DIN Norm für Literaturdarstellung
+			%\bibliography{ref/ref_liste}	% Pfad und Datei der Ref-Datenbank
+			\printbibliography % Literaturliste
+		
+	\end{document}
+%-----------------------------------------------------------------
