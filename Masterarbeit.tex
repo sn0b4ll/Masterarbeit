@@ -35,6 +35,10 @@
 	chapter/title_page,%
 	chapter/thanks_statement,
 	chapter/vorwort,
+	chapter/einleitung,
+	chapter/pentest_arten,
+	chapter/pentest_prozesse,
+	chapter/pentest_mobile_anwendungen,
 	chapter/appendix%
 }
 
@@ -69,44 +73,10 @@
             \cleardoublepage
             
             
-            %\include{chapter/einleitung}
-            \chapter{Einleitung}
-            \chapter{Arten von Penetrationstests}
-	            \section{Web-Application}
-	            \section{Wireless}
-	            \section{Social-Engineering}
-	            \section{Mobile-Applications}
-	            \section{Blackbox/Whitebox}
-            \chapter{Prozesse zu Penetrationstests}
-	            \section{Vorbereitung}
-		            \subsection{Aufwandsschätzung}
-		            \subsection{Rechtliche Aspekte}
-		            	\subsubsection{NDA}
-		            	\subsubsection{Haftungsausschluss}
-		            	\subsubsection{Absicherung gegen §203STGB}
-		            \subsection{Technische Aspekte}
-		            	\subsubsection{Infrastruktur}
-		    			\subsubsection{Tools}
-	            \section{Durchführung}
-	            	\subsection{Bewertung von Findings}
-	            		\subsubsection{CVSS}
-	            		\subsubsection{Alternative Modelle}
-					\subsection{Dokumentation}	            	
-	            	\subsection{Reporting}    	
-	            \section{Nachbereitung/Report}
-	            	\subsection{Inhalte}
-	            	\subsection{Vorlage}
-	     	\chapter{Penetrationstests mobiler Anwendungen}
-	     		\section{Aktuelle Situation und Vergleich}
-	     			\subsection{IOS}
-	     			\subsection{Windows-Phone}
-	     			\subsection{Android}
-	     		\section{Anforderungen}
-	     		\section{Laboraufbau}
-	     		\section{Entwicklung der Umgebung}
-	     			\subsection{Technisches Detail 1}
-	     			\subsection{Technisches Detail 2}
-	     		\section{Abgleich mit Anforderungen}
+            \include{chapter/einleitung}
+            \include{chapter/pentest_arten}
+            \include{chapter/pentest_prozesse}
+			\include{chapter/pentest_mobile_anwendungen}
 	     	\chapter{Anwendung der Umgebung}
 	     		\section{Pentest Anwendung 1}
 	     		\section{Pentest Anwendung 2}
