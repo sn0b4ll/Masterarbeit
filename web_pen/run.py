@@ -115,7 +115,7 @@ def fragebogen_generieren():
     sha3 = hashlib.sha3_384()
     sha3.update(new_string.encode())
     filename = sha3.hexdigest()
-    new_file = open('tex/' + filename, 'w')
+    new_file = open('tex/download/' + filename, 'w')
     new_file.write(new_string)
     new_file.close()
 
@@ -129,12 +129,14 @@ def fragebogen_generieren():
                 '/usr/local/texlive/2016/bin/x86_64-darwin/pdflatex',
                 '-synctex=1',
                 '-interaction=nonstopmode',
+                '--output-directory=download',
                 filename
             ], cwd=tex_path
         )
     except subprocess.CalledProcessError as error:
         print(error)
     os.chdir("..")
+    pdf_file = os.path.join(os.path.join(tex_path, 'download'), filename) + ".pdf"
     return send_file(pdf_file, 'Test.pdf')
 
 APP.run(debug=True)
