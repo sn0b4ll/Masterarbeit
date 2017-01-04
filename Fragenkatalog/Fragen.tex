@@ -1,0 +1,115 @@
+\documentclass[11pt,DIV=11]{scrartcl} % 
+\input{packages.tex}
+\input{question_templates.tex}
+
+\begin{document}
+\section{Allgemeines}
+\subsection{Ansprechpartner}
+\begin{itemize}
+	\item Ansprechpartner
+	\begin{itemize}
+		\item \line(1,0){350}
+		\item \line(1,0){350}
+		\item \line(1,0){350}
+	\end{itemize}
+\end{itemize}
+
+\subsection{Informationen}
+\begin{itemize}
+	\item Alle Inhalte, auch die dieses Gesprächs, werden vertraulich behandelt
+	\item Schäden werden ausgeschlossen
+	\item Ein Pentest hat nie einen Anspruch auf Vollständigkeit
+\end{itemize}
+
+\subsection{Eingrenzung}
+Welche Art/en von Pentest/s sollen durchgeführt werden?
+\begin{itemize}
+	\item[$\square$] Web-Application $\Rightarrow$ Punkt \ref{ref:WebAppPenTest} ausfüllen
+	\item[$\square$] Network $\Rightarrow$ Punkt \ref{ref:NetPenTest} ausfüllen
+	\item[$\square$] Social Engineering $\Rightarrow$ Punkt \ref{ref:SocEngi} ausfüllen
+	\item[$\square$] Wireless $\Rightarrow$ Punkt \ref{ref:WirNetPen} ausfüllen
+	\item[$\square$] Physical $\Rightarrow$ Punkt \ref{ref:PhysPen} ausfüllen
+\end{itemize}
+
+Die Punkte \ref{ref:allg_frag}, \ref{ref:QuesSysAdmin} und \ref{ref:QuesBUM} sollten immer ausgefüllt werden, unabhängig von der/den oben gewählten Art/en.
+$ $\\
+
+\subsection{Allgemeine Fragen}\label{ref:allg_frag}
+\frageJaNein{Ist der Test für eine spezielle Compliance-Anforderung notwendig?}
+\frage{Wann soll der Test statt finden?}
+\frageOpt{In welchen Zeiträumen soll der Test durchgeführt werden?}{Bürozeiten}{Feierabend}{Wochenende}
+\newpage
+
+\section{Web Application Penetration Test}\label{ref:WebAppPenTest}
+
+\frageJaNein{Wird der Quellcode der Applikation/Webseite zugänglich gemacht?}
+\frage{Wie viele Web-Applikationen sind In-Scope?}
+\frage{Wie viele Login-Systeme sind In-Scope?}
+\frage{Wie viele statische Seiten sind ca. In-Scope?}
+\frage{Wie viele dynamische Seiten sind ca. In-Scope?}
+\frageJaNeinKurz{Soll Fuzzing gegen die Applikation/en eingesetzt werden?}
+\frageJaNein{Soll der Penetrations-Test aus verschiedenen Rollen durchgeführt werden?}
+\frageJaNeinKurz{Sollen Password-Scans auf die Webseite durchgeführt werden?}
+
+\section{Network Penetration Test}\label{ref:NetPenTest}
+
+\frage{Was ist das Ziel des Penetrations-Test?}
+\frage{Wie viele IP-Adressen sollen getestet werden?}
+\frageJaNein{Sind Techniken im Einsatz, die die Resultate verfälschen könnten? (WAF, IPS etc.?)}
+\frage{Wie ist das Vorgehen bei einem gelungenen Angriff?}
+\frageJaNein{Soll versucht werden lokale Admin-Rechte zu erlangen und tiefer in das Netz vorzudringen?}
+\frageJaNeinKurz{Sollen Angriffe auf gefundene Passwort-Hashes durchgeführt werden?}
+
+\section{Social Engineering}\label{ref:SocEngi}
+
+\frageJaNeinKurz{Gibt es eine vollständige Liste von E-Mail-Adressen, die für den Test verwendet werden können?}
+\frageJaNeinKurz{Gibt es eine vollständige Liste von Telefon-Nummern, die für den Test verwendet werden können?}
+\frageJaNeinKurz{Ist das Einsetzen von Social Engineering zum Überwinden physikalischer Sicherheitseinrichtungen erlaubt?}
+\frage{Wie viele Personen sollen ca. getestet werden?}
+
+
+\section{Wireless Network Penetration Test}\label{ref:WirNetPen}
+\frage{Wieviele Funk-Netzwerke sind im Einsatz?}
+\frageJaNein{Gibt es eine Gäste WLAN? Wenn ja, wie ist dieses Umgesetzt?}
+\frage{Welche Verschlüsselung wird für die Netzwerke genutzt?}
+\frageJaNeinKurz{Sollen nicht-firmen-Geräte im WLAN aufgespürt werden?}
+\frageJaNeinKurz{Soll Netz-Attacken gegen Clients durchgeführt werden?}
+\frage{Wie viele Clients nutzen das WLAN ca.?}
+
+\section{Physical Penetration Test}\label{ref:PhysPen}
+
+\frage{Wie viele Einrichtungen sollen getestet werden?}
+\frageJaNeinKurz{Wird die Einrichtung mit anderen Parteien geteilt?}
+\frageJaNeinKurz{Muss Sicherheitspersonal umgangen werden?}
+\frageJaNein{Wird das Sicherheitspersonal durch einen Dritten gestellt?}
+\frageJaNeinKurz{Ist das Sicherheitspersonal bewaffnet?}
+\frageJaNeinKurz{Ist der Einsatz von körperlicher Gewalt durch das Sicherheitspersonal gestattet?}
+\frage{Wie viele Eingänge gibt es zu der/den Einrichtung/en?}
+\frageJaNeinKurz{Ist das knacken von Schlössern oder fälschen von Schlüsseln erlaubt?}
+\frage{Wie groß ist die Fläche ungefähr?}
+\frageJaNein{Sind alle physikalischen Sicherheitsmaßnahmen dokumentiert und werden zur Verfügung gestellt?}
+\frageJaNeinKurz{Werden Video-Kameras verwendet?}
+\frageJaNein{Werden diese Kameras durch Dritte verwaltet?}
+\frageJaNeinKurz{Soll versucht werden, die aufgezeichneten Daten zu löschen?}
+\frageJaNeinKurz{Gibt es ein Alarm-System?}
+\frageJaNeinKurz{Gibt es einen Stillen Alarm?}
+\frageJaNeinKurz{Welche Ereignisse lösen den Alarm aus?}
+
+\section{Questions for Systems Administrators}\label{ref:QuesSysAdmin}
+
+\frageJaNein{Gibt es Systeme, die als instabil angesehen werden (alte Patch-Stände, Legacy Systeme etc.)?}
+\frageJaNein{Gibt es Systeme von Dritten, die ausgeschlossen werden müssen oder für die weitere Genehmigungen notwendig sind?}
+\frage{Was ist die Durchschnittszeit zur Wiederherstellung der Funktionalität eines Services?}
+\frageJaNeinKurz{Ist eine Monitoring-Software im Einsatz?}
+\frage{Welche sind die kritischsten Applikationen?}
+\frageJaNeinKurz{Werden in einem regelmäßigen Turnus Backups erstellt und getestet?}
+
+\section{Questions for Business Unit Managers}\label{ref:QuesBUM}
+
+\frageJaNeinKurz{Ist die Führungsebene über den Test informiert?}
+\frage{Welche Daten stellen das größte Risiko dar, falls diese manipuliert werden?}
+\frageJaNeinKurz{Gibt es Testfälle, die die Funktionalität der Services prüfen und belegen können?}
+\frageJaNeinKurz{Sind "Disaster Recovery Procedures" vorhanden?}
+
+\renewcommand{\arraystretch}{1.0}
+\end{document}

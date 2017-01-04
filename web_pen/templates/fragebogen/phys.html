@@ -1,0 +1,19 @@
+<div id="phys" style="display: none">
+  <h4>Physical Penetration Test</h4>
+  {{ text_question("phys_anz_einr", "Wie viele Einrichtungen sollen getestet werden?") }}
+  {{ binary_question("phys_anz_part", "Wird die Einrichtung mit anderen Parteien geteilt?") }}
+  {{ binary_question("phys_sich_pers", "Muss Sicherheitspersonal umgangen werden?") }}
+  {{ binary_question("phys_sich_pers_dritt", "Wird das Sicherheitspersonal durch einen Dritten gestellt?") }}
+  {{ binary_question("phys_sich_pers_waffen", "Ist das Sicherheitspersonal bewaffnet?") }}
+  {{ binary_question("phys_sich_pers_gewalt", "Ist der Einsatz von körperlicher Gewalt durch das Sicherheitspersonal gestattet?") }}
+  {{ text_question("phys_anz_eing", "Wie viele Eingänge gibt es zu der/den Einrichtung/en?") }}
+  {{ binary_question("phys_knacken", "Ist das knacken von Schlössern oder fälschen von Schlüsseln erlaubt?") }}
+  {{ text_question("phys_flaeche", "Wie groß ist die Fläche ungefähr?") }}
+  {{ binary_question("phys_whitebox", "Sind alle physikalischen Sicherheitsmaßnahmen dokumentiert und werden zur Verfügung gestellt?") }}
+  {{ binary_question("phys_cam", "Werden Video-Kameras verwendet?") }}
+  {{ binary_question("phys_cam_dritte", "Werden diese Kameras durch Dritte verwaltet?") }}
+  {{ binary_question("phys_loeschen", "Soll versucht werden, die aufgezeichneten Daten zu löschen?") }}
+  {{ binary_question("phys_alarm", "Gibt es ein Alarm-System?") }}
+  {{ binary_question("phys_alarm_still", "Gibt es einen Stillen Alarm?") }}
+  {{ text_question("phys_alarm_ausloeser", "Welche Ereignisse lösen den Alarm aus?") }}
+</div>

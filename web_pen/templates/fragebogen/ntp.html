@@ -1,0 +1,9 @@
+<div id="npt" style="display: none">
+  <h4>Network Penetration Test</h4>
+  {{ text_question("npt_ziel", "Was ist das Ziel des Penetrations-Test?") }}
+  {{ text_question("npt_anz_ips", "Wie viele IP-Adressen sollen getestet werden?") }}
+  {{ binary_question("npt_verteidigung", "Sind Techniken im Einsatz, die die Resultate verfälschen könnten? (WAF, IPS etc.?)") }}
+  {{ text_question("npt_gel_ang", "Wie ist das Vorgehen bei einem gelungenen Angriff?") }}
+  {{ binary_question("npt_nutz_lok_admin", "Soll versucht werden lokale Admin-Rechte zu erlangen und tiefer in das Netz vorzudringen?") }}
+  {{ binary_question("npt_pwd_hashes", "Sollen Angriffe auf gefundene Passwort-Hashes durchgeführt werden?") }}
+</div>
