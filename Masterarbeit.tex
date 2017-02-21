@@ -39,6 +39,7 @@
 	chapter/pentest_arten,
 	chapter/pentest_prozesse,
 	chapter/pentest_mobile_anwendungen,
+	chapter/fazit,
 	chapter/appendix%
 }
 
@@ -58,10 +59,12 @@
 					
 			% Inhaltsverzeichnis
 			%\setcounter{\secnumdepth}{2} % Zwei Ebenen im Inhaltsverzeichnis auflisten
-			\setcounter{tocdepth}{5}
+			\setcounter{tocdepth}{2}
 			\tableofcontents
 				\cleardoublepage	
-		
+				
+			% SubSub-Sections noch nummerieren, aber keine Paragraphen
+			\setcounter{secnumdepth}{3} 
 			% Abkrzungsverzeichnis
 			%\printnomenclature
 				%\cleardoublepage	
@@ -77,10 +80,7 @@
             \include{chapter/pentest_arten}
             \include{chapter/pentest_prozesse}
 			\include{chapter/pentest_mobile_anwendungen}
-	     	\chapter{Anwendung der Umgebung}
-	     		\section{Pentest Anwendung 1}
-	     		\section{Pentest Anwendung 2}
-	     	\chapter{Fazit}
+	     	\include{chapter/fazit}
                 \cleardoublepage	
 	
 %------------------------------------------------------------------------
