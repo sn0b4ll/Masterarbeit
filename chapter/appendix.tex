@@ -4,12 +4,31 @@
 \appendix
 \chapter{Quellcode}
 
-\section{Fragebogen}
+\section{Pentest-Helper}
 \subsection{Latex}\label{ap:FragTex}
 \lstset{language=TeX}
 \lstinputlisting[caption={packages.tex}]{./Fragenkatalog/packages.tex}
 \lstinputlisting[caption={question\_templates.tex}]{./Fragenkatalog/question_templates.tex}
 \lstinputlisting[caption={Frage.tex}]{./Fragenkatalog/Fragen.tex}
+
+\subsection{Docker}\label{ap:Docker}
+\lstinputlisting[caption={Dockerfile für Entwicklungsversion}]{./logs/Dockerfile}
+
+\section{iOS-Simulator}
+\subsection{Control-Script}\label{ap:simcontrol}
+\lstset{language=Python}
+\lstinputlisting[caption={control.py}]{./logs/control.py}
+\subsection{MITM-Server}\label{ap:mitmserver}
+\lstset{language=Python}
+\lstinputlisting[caption={MITM-Server}]{./logs/mitm_server.py}
+
+\section{MobSF}
+%\subsection{BinSkim}label{ap:BinSkimRegeln}
+%\lstinputlisting[caption={BinSkim-Regeln}]{./logs/20170213_binskim_rules.txt}
+
+\subsection{BinScope-Installer}\label{ap:BinScopeInstaller}
+\lstset{language=Python}
+\lstinputlisting[caption={BinScope-Installer}]{./logs/binscope_install.py}
 
 %\newpage
 %\subsection{SAF.cgi}
