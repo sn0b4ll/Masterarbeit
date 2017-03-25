@@ -1,0 +1,43 @@
+\tikzset{
+    state/.style={
+           rectangle,
+           rounded corners,
+           draw=black, very thick,
+           minimum height=2em,
+           inner sep=2pt,
+           text centered,
+           },
+    bigbox/.style={
+    		draw, 
+    		inner sep=20pt,
+    		label={[shift={(0ex,0ex)}]:#1}},
+}
+
+\begin{figure}[p]
+
+
+\begin{tikzpicture}[node distance=4cm]
+
+\node[state,initial]             (start) {Wartezustand};
+\node[state,below=of start]             (an_start) {Analyse anfordern};
+\node[state,right=of an_start]       (chal_calc) {Challenge berechnen};
+\node[state,below =of an_start] (chal_sig) {Challenge signieren};
+\node[state,below=of chal_calc] (check_chal) {Prüfen von Sig. und Chal.};
+\node[state,below=of check_chal] (analyse) {Durchführung der Analyse};
+\node[state,below=of chal_sig] (dar_erg) {Darstellung der Ergebnisse};
+
+\node[bigbox=MobSF Host, label={[shift={(15ex,3ex)}]}, fit=(start)(an_start)(chal_sig)(dar_erg),] (MobSFHost) {};
+\node[bigbox=Analyse Server, fit=(chal_calc)(check_chal)(analyse),] (MobSFHost) {};
+
+\draw[-{Latex[width=3mm]}] (start) edge node [right]      {Analyse angefordert} (an_start);
+\draw[-{Latex[width=3mm]}] (an_start) edge node [above]      {Challenge anfordern} (chal_calc);
+\draw[-{Latex[width=3mm]}] (chal_calc) edge [out=260,in=90]node [above] {Challenge senden} (chal_sig);
+\draw[-{Latex[width=3mm]}] (chal_sig) edge node [above] {Sig. Chal. senden} (check_chal);
+\draw[-{Latex[width=3mm]}] (check_chal) edge node [left] {Analyse starten} (analyse);
+\draw[-{Latex[width=3mm]}] (analyse) edge node [above=0.3cm] {Ergebnisse übertragen} (dar_erg);
+\draw[-{Latex[width=3mm]}] (dar_erg) edge [out=125,in=235]node [left] {} (start);
+
+\end{tikzpicture}
+\caption{Ablauf einer Analyse auf einer separaten VM}
+\label{fig:WeitMobSFXMLRPCAblauf}
+\end{figure}
