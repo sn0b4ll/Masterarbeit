@@ -4,6 +4,203 @@
 \appendix
 \chapter{Quellcode}
 
+\section{Fragebogen}\label{ap:Fragebogen}
+\paragraph{Allgemein}
+\begin{itemize}
+	\item Wie ist der Anwendungs/Projekt-Name?
+	\item Wer sind die Ansprechpartner?
+	\item Welche Art/en von Pen-Test/s sollen durchgeführt werden? \\
+	(Web-Application/Web-Service/Mobile-Application/Network/Social Engineering/Wireless/Physical)
+	\item Ist der Test für eine spezielle Compliance-Anforderung notwendig?\\
+	(Ja/Nein)
+	\item Wann soll der Test durchgeführt werden?
+	\item In welchen Zeiträumen soll der Test durchgeführt werden?\\
+	(Bürozeiten/Feierabend/Wochenende)
+\end{itemize}
+
+\paragraph{Web Application Penetration Test}
+\begin{itemize}
+	\item Wie geschieht der Zugriff auf die Anwendung?\\
+	(Aus dem Internet erreichbar/IP-Einschränkung/VPN/Pen-Test muss intern durchgeführt werden)
+	\item Welche Funktionalitäten hat die Anwendung?\\
+	(CMS/Captcha/Upload/Download/Browser-Plugins/Workflows)
+	\item In welcher Stage befindet sich die Anwendung?\\
+	(Development oder Test/System Integration/Produktion)
+	\item Wird der Quellcode der Applikation/Webseite zugänglich gemacht?\\
+	(Ja/Nein)
+	\item Wie viele Web-Applikationen sind In-Scope?
+	\item Wie viele Login-Systeme sind In-Scope?
+	\item Wie viele statische Seiten sind ca. In-Scope?
+	\item Wie viele dynamische Seiten sind ca. In-Scope?
+	\item Soll Fuzzing gegen die Applikation/en eingesetzt werden?\\
+	(Ja/Nein)
+	\item Soll der Penetration-Test aus verschiedenen Rollen durchgeführt werden?\\
+	(Ja/Nein)
+	\item  Wie ist die Anmeldung gestaltet?\\
+	(Benutzername und Passwort/Zertifikat/Komplexeres System)
+	\item Welche Technologien nutzt die Anwendung?
+	\item Sollen Password-Scans auf die Webseite durchgeführt werden?\\
+	(Ja/Nein)
+\end{itemize}
+
+\paragraph{Web Service Penetration Test}
+\begin{itemize}
+	\item Wie geschieht der Zugriff auf die Anwendung?\\
+	(Aus dem Internet erreichbar/IP-Einschränkung/VPN/Pen-Test muss intern durchgeführt werden)
+	\item In welcher Stage befindet sich die Anwendung?\\
+	(Development oder Test/System Integration/Produktion)
+	\item Wird der Quellcode des Services zugänglich gemacht? \\
+	(Ja/Nein)
+	\item Wie viele Web-Services sind In-Scope?
+	\item Soll Fuzzing gegen die Applikation/en eingesetzt werden?\\
+	(Ja/Nein)
+	\item Soll der Penetration-Test aus verschiedenen Rollen durchgeführt werden?\\
+	(Ja/Nein)
+	\item  Wie ist die Anmeldung gestaltet?\\
+	(Benutzername und Passwort/Zertifikat/Komplexeres System)
+	\item Welche Technologien wurden für den Service genutzt??
+	\item Sollen Password-Scans auf den Web-Service durchgeführt werden?\\
+	(Ja/Nein)
+\end{itemize}
+
+\paragraph{Mobile Application Penetration Test}
+\begin{itemize}
+	\item Welche Technologien wurden für die App genutzt?
+	\item Wird der Quellcode der App zugänglich gemacht?\\
+	(Ja/Nein)
+	\item Gibt es eine Root-Detection? Wenn ja, welche Konsequenzen hat eine positive Erkennung?\\
+	(Ja/Nein)
+	\item Hat die App einen Login?\\
+	(Ja/Nein)
+	\item Soll der Penetration-Test aus verschiedenen Rollen durchgeführt werden?\\
+	(Ja/Nein)
+	\item Soll Fuzzing gegen die App eingesetzt werden?\\
+	(Ja/Nein)
+\end{itemize}
+
+\paragraph{Network Penetration Test}
+\begin{itemize}
+	\item Was ist das Ziel des Penetration-Test?
+	\item Wie viele IP-Adressen sollen getestet werden?
+	\item Sind Techniken im Einsatz, die die Resultate verfälschen könnten? (WAF, IPS etc.?)\\
+	(Ja/Nein)
+	\item Wie ist das Vorgehen bei einem gelungenen Angriff?
+	\item Soll versucht werden lokale Admin-Rechte zu erlangen und tiefer in das Netz vorzudringen?\\
+	(Ja/Nein)
+	\item Sollen Angriffe auf gefundene Passwort-Hashes durchgeführt werden?\\
+	(Ja/Nein)
+\end{itemize}
+
+\paragraph{Social Engineering}
+\begin{itemize}
+	\item Gibt es eine vollständige Liste von E-Mail-Adressen, die für den Test verwendet werden können?\\
+	(Ja/Nein)
+	\item Gibt es eine vollständige Liste von Telefon-Nummern, die für den Test verwendet werden können?\\
+	(Ja/Nein)
+	\item Ist das Einsetzen von Social Engineering zum Überwinden physikalischer Sicherheitseinrichtungen erlaubt?\\
+	(Ja/Nein)
+	\item Wie viele Personen sollen ca. getestet werden?
+\end{itemize}
+
+\paragraph{Wireless Network Penetration Test}
+\begin{itemize}
+	\item Wie viele Funk-Netzwerke sind im Einsatz?
+	\item Gibt es ein Gäste WLAN? Wenn ja, wie ist dieses umgesetzt?\\
+	(Ja/Nein)
+	\item Welche Verschlüsselung wird für die Netzwerke genutzt?
+	\item Sollen Nicht-Firmen-Geräte im WLAN aufgespürt werden?\\
+	(Ja/Nein)
+	\item Sollen Netz-Attacken gegen Clients durchgeführt werden?\\
+	(Ja/Nein)
+	\item Wie viele Clients nutzen das WLAN ca.?
+\end{itemize}
+
+\paragraph{Physical Penetration Test}
+\begin{itemize}
+	\item Wie viele Einrichtungen sollen getestet werden?
+	\item Wird die Einrichtung mit anderen Parteien geteilt?\\
+	(Ja/Nein)
+	\item Muss Sicherheitspersonal umgangen werden?\\
+	(Ja/Nein)
+	\item Wird das Sicherheitspersonal durch einen Dritten gestellt?\\
+	(Ja/Nein)
+	\item Ist das Sicherheitspersonal bewaffnet?\\
+	(Ja/Nein)
+	\item Ist der Einsatz von körperlicher Gewalt durch das Sicherheitspersonal gestattet?\\
+	(Ja/Nein)
+	\item Wie viele Eingänge gibt es zu der/den Einrichtung/en?
+	\item Ist das Knacken von Schlössern oder Fälschen von Schlüsseln erlaubt?\\
+	(Ja/Nein)
+	\item Wie groß ist die Fläche der Niederlassung ungefähr?
+	\item Sind alle physikalischen Sicherheitsmaßnahmen dokumentiert und werden zur Verfügung gestellt?\\
+	(Ja/Nein)
+	\item Werden Video-Kameras verwendet?\\
+	(Ja/Nein)
+	\item Werden diese Kameras durch Dritte verwaltet?\\
+	(Ja/Nein)
+	\item Soll versucht werden, die aufgezeichneten Daten zu löschen?\\
+	(Ja/Nein)
+	\item Gibt es ein Alarm-System?\\
+	(Ja/Nein)
+	\item Gibt es einen Stillen Alarm?\\
+	(Ja/Nein)
+	\item Welche Ereignisse lösen den Alarm aus?
+\end{itemize}
+
+\section{Kickoff-Fragebogen}\label{ap:kickofffrag}
+\paragraph{Allgemein}
+\begin{itemize}
+	\item Wie ist der Projekt-Name?
+	\item Wer sind die Teilnehmer?
+	\item Wann soll der Test durchgeführt werden?
+	\item Was ist das Ziel des Tests?
+	\item In welcher Stage befindet sich die Anwendung? Development Test System Integration Produktion
+	\item Welche IP-Adressen sollen getestet werden?
+	\item Welche URLs sollten getestet werden?
+	\item Welche Zugangsdaten sollen genutzt werden?
+	\item Sollen Denial-Of-Service-Angriffe durchgeführt werden?\\
+	(Ja/Nein)
+	\item Liegt ein Haftungsauschschluss vor?\\
+	(Ja/Nein)
+	\item Liegt eine Erlaubnis des Server-Betreibers vor?\\
+	(Ja/Nein)
+	\item Gibt es eine Deadline für den Bericht?\\
+	(Ja/Nein)
+	\item Erste Ergebnisse am Ende des Pen-Tests in einfacher Form zukommen lassen (z.B. Excel)?\\
+	(Ja/Nein)
+\end{itemize}
+
+
+\paragraph{Fragen an den System-Administrator}
+\begin{itemize}
+\item Gibt es Systeme, die als instabil angesehen werden (alte Patch-Stände, Legacy Systeme etc.)?\\
+(Ja/Nein)
+\item Gibt es Systeme von Dritten, die ausgeschlossen werden müssen oder für die weitere Genehmigungen notwendig sind?\\
+(Ja/Nein)
+\item Was ist die Durchschnittszeit zur Wiederherstellung der Funktionalität eines Services?
+\item Ist eine Monitoring-Software im Einsatz?\\
+(Ja/Nein)
+\item Welche sind die kritischsten Applikationen?
+\item Werden in einem regelmäßigen Turnus Backups erstellt und getestet?\\
+(Ja/Nein)
+\end{itemize}
+
+\paragraph{Fragen an den Business Unit Manager}
+\begin{itemize}
+\item Ist die Führungsebene über den Test informiert?\\
+(Ja/Nein)
+\item Welche Daten stellen das größte Risiko dar, falls diese manipuliert werden?
+\item Gibt es Testfälle, die die Funktionalität der Services prüfen und belegen können?\\
+(Ja/Nein)
+\item Sind "`Disaster Recovery Procedures"' vorhanden?\\
+(Ja/Nein)
+\end{itemize}
+
+\paragraph{Abschluss}
+\begin{itemize}
+\item Offene TODOs
+\end{itemize}
+
 \section{Pentest-Helper}
 \subsection{Latex}\label{ap:FragTex}
 \lstset{language=TeX}
